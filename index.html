@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun!</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffe0e9, #ffb3c6);
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 50px;
+      color: #b3003c;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
+    .message {
+      font-size: 1.5em;
+      margin: 20px;
+      color: #800020;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 25px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+    button:hover {
+      background: #e6004c;
+      transform: scale(1.1);
+    }
+    .balloon {
+      position: absolute;
+      width: 60px;
+      height: 80px;
+      background: radial-gradient(circle at 30% 30%, #ff99aa, #ff4d6d);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: float 8s infinite ease-in-out;
+      box-shadow: inset -5px -10px 15px rgba(255,255,255,0.5);
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); }
+      100% { transform: translateY(-10vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>❤️🎉 Selamat Ulang Tahun Nayaaa! 🎂❤️</h1>
+  <p class="message">Semoga harimu penuh kebahagiaan, cinta, dan kejutan indah!</p>
+  <button onclick="showSurprise()">Klik untuk hadiahahaha 🎁</button>
+
+  <script>
+    function showSurprise() {
+      alert("🎉 Selamat ulang tahun! Semoga panjang umur, sehat selalu, dan penuh kebahagiaan yaa!, kamu pasti bisa keterima di ptn impian kamu, kamu juga sudah banyak perubahan menjadi dewasa di umur kamu yang ke 18 ini, selamat merayakan 🎂");
+      for (let i = 0; i < 15; i++) {
+        let balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.style.left = Math.random() * window.innerWidth + "px";
+        // Palet pink & merah
+        const colors = ["#ff99aa", "#ff4d6d", "#ff1a4d", "#e6004c", "#ffb3c6"];
+        balloon.style.background = `radial-gradient(circle at 30% 30%, ${colors[Math.floor(Math.random()*colors.length)]}, #b3003c)`;
+        balloon.style.animationDuration = (Math.random() * 4 + 4) + "s";
+        document.body.appendChild(balloon);
+      }
+    }
+  </script>
+</body>
+</html>
+
